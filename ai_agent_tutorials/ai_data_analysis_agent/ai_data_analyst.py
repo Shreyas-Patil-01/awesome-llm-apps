@@ -86,6 +86,7 @@ if uploaded_file is not None and "openai_key" in st.session_state:
         }
         
         # Initialize the DuckDbAgent for SQL query generation
+        #DuckDB is an open-source, in-process, columnar database management system primarily designed for fast analytical queries (OLAP) on large datasets
         duckdb_agent = DuckDbAgent(
             model=OpenAIChat(model="gpt-4", api_key=st.session_state.openai_key),
             semantic_model=json.dumps(semantic_model),
